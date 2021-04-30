@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Family Chat</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="shortcut icon"  type= (image/png) href="favicon.png">
+    <link href="bootstrap-4.3.1.min.css" rel="stylesheet" />
+    <link href="chat.css" rel="stylesheet"/>
+     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600&family=Noto+Sans+HK:wght@100;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- The Famamily hub communication platform 
+
+                   THE CHAT PAGE HEADER                    -->  
+<span class="chatHeader">
+<a class="chat-logo" href="testing1.html"><img src="images/logo.png"></a></span>
+
+<!-- <div class="col-2 col-sm-2 col-md-2 backbtn">
+                    
+                    <span class="dropdown-toggle" data-toggle="dropdown" style="float:left"></span>
+                        <button class="btn backbtn btn-primary"  data-toggle="modal" data-target="#profile">PROFILE</button>
+                
+                        
+                         
+                         <div class= "modal fade" id= "profile">
+                             <div class="modal-dialog">
+                                 <div class = "modal-content">
+                                    <div class="cardprofile">
+                                        <div class="card-header text-center" style="background-color:#D6E7F1;">
+                                            PROFILE
+                                        </div>
+                                        <img id="profilepic" src="profilepic.png" class="Picture" />
+                                    <ul class="list-group list-group-flush"  id="">
+                                        <li class="list-group-item" >
+                                           
+                                        </li>
+                                    </ul>
+                                 </div>
+                                
+                            </div>
+                             </div>
+                        </div>
+                    </div> -->  
+
+
+<!--                        The START CHAT LIST                                 -->  
+<!-- START TO The left side of the interface the list of family users  -->
+<div class="container-fluid bg-chat chatsection rounded shadow-md">
+<div class="row h-100">
+    <div class="col-2 col-sm-2 col-md-4 pr-0 d-none d-md-block" id="chatlist">
+        <div class="card" >
+            <div class="card-header" >
+            <div class="row">
+                <div class="col-1 col-sm-1 col-md-1 d-md-none">
+                <i class="fas fa-arrow-left d-md-none" style="font-size:20px;cursor:pointer;" onclick="hideUserList()"></i>
+                </div>
+
+                <div class="col-5 col-sm-5 col-md-5">
+                    <img id="profilepic" src="profilepic.png" class="profilePic" />
+                </div>
+
+
+                  <div class="col-2 col-sm-2 col-md-2 ">
+                      <a href= "#" style="float:left;"  data-toggle="modal" data-target="#modalPendingList" onclick="ShowRequests()"> 
+
+                    
+                    <i class="fas fa-users fa-2x mr-4 addedUsers"></i>
+                    <span id="RequestCount">0</span>
+                </a>
+                  
+                   <div class= "modal fade" id= "modalPendingList">
+                    <div class="modal-dialog">
+                        <div class = "modal-content">
+                           <div class="card">
+                               <div class="card-header text-center" style="background-color:#D6E7F1;">
+                                   Pending List
+                               </div>
+                           <ul class="list-group list-group-flush"  id="PendingList">
+                               <li class="list-group-item" >
+                                   <input type="text" placeholder ="Search or new chat" class="form-control form-rounded">
+                               </li>
+                           </ul>
+                       
+                       </div>
+                   </div>
+                    </div>
+               </div>
+            </div>
+
+<!-- Displays the list of users that the users has had a chat with   -->
+                <div class="col-2 col-sm-2 col-md-2 "> 
+                    <div class="dropdown"></div>
+                    <span class="dropdown-toggle" data-toggle="dropdown" style="float:left">
+                    
+                    <i class="fas fa-user-plus fa-2x mr-4 addUsers "></i>
+                </span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="#" id="startChat" class="dropdown-item"  onclick= "showRegisteredUsers()"
+                        data-toggle="modal"   style= "float:right" data-target="#registeredUsers">Add Family</a>
+
+
+                        <a href="#" id="" class="dropdown-item"  onclick= "showFamFriends()"
+                             data-toggle="modal"  data-target="#friendList">Start Chat</a>
+                         </div>
+                         
+                         <div class= "modal fade" id= "friendList">
+                             <div class="modal-dialog">
+                                 <div class = "modal-content">
+                                    <div class="card">
+                                        <div class="card-header text-center" style="background-color:#D6E7F1;">
+                                            Your Family & Friends 
+                                        </div>
+                                    <ul class="list-group list-group-flush"  id="ListOfFriends">
+                                        <li class="list-group-item" >
+                                            <input type="text" placeholder ="Search or new chat" class="form-control form-rounded">
+                                        </li>
+                                    </ul>
+                                
+                                </div>
+                            </div>
+                             </div>
+                        </div>
+
+                        <div class= "modal fade" id= "registeredUsers">
+                            <div class="modal-dialog">
+                                <div class = "modal-content">
+                                   <div class="card">
+                                       <div class="card-header text-center" style="background-color:#D6E7F1;">
+                                           Registered Users
+                                       </div>
+                                   <ul class="list-group list-group-flush"  id="RegisteredUsers">
+                                       <li class="list-group-item" >
+                                           <input type="text" placeholder ="Search or new chat" class="form-control form-rounded">
+                                       </li>
+                                   </ul>
+                               
+                               </div>
+                           </div>
+                            </div>
+                       </div>
+                  
+                    </div>
+  <!--                        ADDING ICONS TO CHAT LIST HEADER                               -->                
+                <div class="col-2 col-sm-2 col-md-2 ">
+                    <div class="dropdown-toggle" data-toggle="dropdown" >
+                    <i class="far fa-caret-square-down fa-2x ml-4 dropdownicon" ></i>
+                    <div class= "dropdown-menu 2">
+                        <a href="#" id="dropdownLogin" onclick="signin()" class="dropdown-item">Log In</a>
+                        <a href="#" id="dropdownLogout" onclick="signout()" class="dropdown-item" style="display:none;">Log Out</a>
+                    </div>
+                    </div>
+                </div>
+                    <div class="col-md-5"></div>
+                    <ul class="list-group list-group-flush" id = "chatDetails" ></ul>
+        
+        </div>
+    </div>
+</div>
+</div>
+<!--                        The END of the User CHAT LISTS                            -->  
+ 
+
+<!--                        The START OF CHAT SECTION                                 -->  
+<!-- THE START OF The right side of the interface the the chat box -->
+    <div class="col-10 col-sm-10 col-md-8 pl-0" id="chatarea">
+    <div id="chatPanel" class="card  messagebody" style="display:none;" >
+        
+            <div class="card-header" style="background-color:#D6E7F1;" >
+                <div class="row">
+
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1 ">
+                        <img src="profilepic.png" id="chatPPic" class="rounded-circle profilePic" />
+                    </div>
+                    <div class="col-5 col-sm-5 col-md-5 col-lg-7 ">
+                        <div class="username" id="divChatName" >Name</div>
+                     
+                     <div class="user
+                     " id="divChatSeen"></div>
+                     
+                    </div>
+                
+                <div class=" col-4 col-sm-4 col-md-4 col-lg-3 chaticon">
+                    <i class="fas fa-search ml-4"></i>
+                     <span class="sendphoto">
+
+            <!--        Adding  functionality to the Image icon  -->
+                     <span class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="far fa-image ml-4"></i>
+                    </span>
+                    <div class="dropdown-menu" >
+                        <a href="#" class="dropdown-item" onclick="SelectImage()"
+                                >Send Image
+                                <input type="file" id="sendImage" onchange="AttachImage(this);" 
+                                 accept="image/*" style="display: none;"> 
+                            </a>
+                         </div>
+                       
+                        </span>
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="card-body"   id="inputmessage">
+            <div class= "row">
+                <div class="col-2 col-sm-1 col-md-1">
+                    <img src="profilepic.png" class="chatimg" />
+                </div>
+
+                <div class="col-6 col-sm7 col-md-7 ">
+                <p class="messageReceive float-right">The text 
+                    <span class="receivedTime float-right">1:28</span> 
+                </p>
+                </div>
+
+
+                <div class="row justify-content-end">
+                    <div class="col-6 col-sm-7 col-md-7 ">
+                    <p class="messageSent float-right">The text 
+                        <span class="receivedTime ">1:28</span> 
+                    </p>
+                    </div>
+                    <div class="col-2 col-sm-1 col-md-1 mr-4">
+                        <img src="profilepic.png" class="chatimg" />
+                    </div>
+                </div>
+
+    </div>
+ </div>
+
+  <!--                        The chat section FOOTER (input message )                               -->  
+ 
+    <div class = "card-footer" style="background-color:#D6E7F1;">
+        <div class="row">
+            
+            <div class=" inputbox col-8 col-md-10">
+                <input type="text" id= "text"  placeholder="Message" class="form-control form-rounded" />
+            </div>
+            <div class="col-md-1 chaticon" >
+                <i class="fas fa-paper-plane " ></i>
+            </div>
+            <div class="col-md-1 chaticon" >
+                <i class="far fa-grin " ></i>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--                        The END of the User Message Body                                -->  
+
+<!-- The right side of the interface before logging in -->
+        <div id="divStart" class="chatcover">
+            
+            <img class="chatlogo" src="images/chatlogo.png" >
+            <h2 class="mt-4">Welcome to Family Chat! </h2>
+            <h5 class="mt-3">Login and start connecting with your family <i class="far fa-comments"></i></h5>
+            <a href="#" onclick="showUserList()" class="d-md-none">Chat List</a>
+            <button onclick="signin()" class="btn gglSignin btn-primary ">Log In</button>
+            <button onclick="signout()" class="btn  gglSignout btn-primary">Log Out</button>
+        
+        </div>
+    </div>
+</div>
+</div>                           
+             </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/popper-1.14.7.min.js"></script>
+    <script src="Scripts/bootstrap-4.3.1.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
+    <!--
+    <script src="Scripts/firebase.init.js"></script>
+    <script src="Scripts/chat.js"></script>
+ TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries
+
+
+
+</body>
+</html> -->
+    
+<script src="chat.css"></script>
+    <script src="firebase.init.js"></script>
+     <script src="chat.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+</body>
+</html>
+
+       <!-- <div class= "row">
+                <div class="col-2 col-sm-1 col-md-1">
+                    <img src="profilepic.png" class="chatimg" />
+                </div>
+
+                <div class="col-4 col-sm5 col-md-5 "></div>
+                <p class="messageReceive float-right">The text 
+                    <span class="receivedTime float-right">1:28</span> 
+                </p>
+       
+        <div class="row justify-content-end">
+            <div class="col-6 col-sm-7 col-md-7 ">
+            <p class="messageSent float-right">The text 
+                <span class="receivedTime ">1:28</span> 
+            </p>
+            </div>
+            <div class="col-2 col-sm-1 col-md-1 mr-4">
+                <img src="profilepic.png" class="chatimg" />
+            </div>
+        </div>-->

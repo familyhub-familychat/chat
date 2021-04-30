@@ -1,0 +1,291 @@
+﻿body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+   
+    background-image: #f2f2f2;
+    font-family:'Encode Sans', sans-serif;
+}
+
+.chat-logo img{
+    height: 4.8rem;
+    position:absolute;
+    margin-top: 0.6rem;
+    margin-left: 0.8rem;
+    padding-right: .7rem;
+
+}
+.chatHeader {
+    height: 100px;
+    width: 100%;
+    background-color: rgba(126, 165, 186, 0.9);
+    position: fixed;
+    z-index: -1;
+}
+
+.bg-chat{
+background-color:#d7e7f1;
+
+}
+
+.chatsection {
+    height: calc(90% - 50px);
+    width: 75%;
+    margin-top: 90px;
+    padding: 0;
+    
+
+}
+
+.profilePic {
+    height: 45px;
+    width: 45px;
+    
+    
+}
+.Picture{
+    height: 145px;
+    width: 145px;  
+}
+.hello {
+    margin-bottom: 0.8rem;
+    height: 2.6rem;
+    color: rgb(175, 132, 13);
+
+}
+.addedUsers{
+    margin-top: 0.5rem;
+    padding: 2px 1px;;
+    height: 2.6rem;
+    color: rgb(13, 151, 175); 
+
+}
+
+.addUsers{
+    margin-top: 0.5rem;
+    padding: 2px 17px;;
+    height: 2.6rem;
+    color: rgb(13, 151, 175);
+    font-size: 28px; 
+
+}
+.dropdownicon{
+    margin-top: 0.5rem;
+    padding: 2px 1px;;
+    height: 2.6rem;
+    color: rgb(13, 151, 175); 
+
+}
+
+
+.form-rounded {
+    border-radius: 1rem;
+    width: 16rem;
+    background-color:aliceblue;
+}
+
+.userimg {
+    margin-left: -10px;
+    height: 50px;
+    width: 50px;
+    
+}
+
+
+.username {
+    margin-top: 8px;
+    margin-left: 16px;
+    font-weight: 300;
+    color: #000;
+}
+
+.usermsg {
+    margin-left: 16px;
+    font-size: 12px;
+    line-height: 20px;
+    max-height: 20px;
+}
+.useremail {
+    margin-left: 16px;
+    font-size: 8px;
+    line-height: 20px;
+    max-height: 20px;
+}
+
+.chatlogo{
+    height: 7rem;
+    margin-top: 10rem;
+    
+}
+
+.chatcover{
+  font-size: 2.5rem;
+  font-weight: 700;
+  color:#3b9fd5cc;
+  text-shadow: .9rem .4rem .9rem rgb(255, 255, 255);
+  text-align: center;
+  margin-left: 10rem;
+  position:absolute;
+}
+
+
+.chaticon {
+    font-size: 30px;
+    color: #4896b4;
+    cursor: pointer;
+
+}
+.card-footer{
+
+
+    
+}
+
+.inputbox input{
+    width: 30rem;
+   
+
+}
+
+.chatimg {
+    height: 40px;
+    width: 40px;
+}
+
+.messageReceive {
+    background-color: #53b3e7;
+    border-radius: 0.3rem;
+    padding: 8px 10px;
+    display: inline-block;
+    position: absolute ;
+  
+   
+}
+
+.messageSent {
+    background-color: #70b0d3;
+    border-radius: 0.3rem;
+    padding: 8px 10px;
+    display: inline-block;
+  
+}
+
+.receivedTime{
+    font-size: 10px;
+    color: #a8daeb;
+    margin-top: 5%;
+    margin-left: 0.5%;
+
+}
+
+.gglSignin{
+    color:white;
+    background-color:rgba(98, 191, 241, 0.692);
+    border-color: white;
+    width: 8rem;
+    border-radius: 2rem;
+
+}
+.gglSignout{
+    color:white;
+    background-color:rgba(98, 191, 241, 0.692);
+    border-color: white;
+    width: 8rem;
+    border-radius: 2rem;
+
+
+}
+
+
+.requestbtn{
+    color:white;
+    background-color:rgba(104, 184, 228, 0.822);
+    border-color: rgb(5, 137, 170);
+    border-width: 2px; 
+    width: 6rem;
+    border-radius: 2rem;
+
+
+}
+
+.card-header{
+background-color:#FFFFFF;
+}
+
+.card {
+    height: 84vh;
+
+}
+.messagebody{
+    height: 84vh; 
+    
+}
+
+.backbtn{
+    position:absolute;
+    right: 1rem;
+    top: 1.2rem;
+    background-color: #70b0d300;
+    border:#5291a1;
+    
+
+}
+.cardprofile{
+    height: 68vh; 
+    width: 68vh;
+}
+
+#inputmessage {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#chatDetails {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dropdown-toggle::before {
+    display: none !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+#emoji {
+    position: absolute;
+    top: -30vh;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0,0,0,0.23) 0px 3px 6px;
+}
+
+    #emoji #myTabContent {
+        height: 20vh;
+    }
+
+#myTabContent a {
+    text-decoration: none;
+}
+
+#RequestCount
+ {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(21, 139, 185);
+    border-radius: 15%;
+    position: absolute;
+    margin-top: 10%;
+    font-size: 9px;
+    width: 40%;
+    text-align: center;
+    color: rgb(21, 139, 185);
+    font-weight: bold;
+    margin-left: -60%;
+}
+
