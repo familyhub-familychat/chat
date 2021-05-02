@@ -264,7 +264,7 @@ function DisplayChatList() {
                 </div>
                 <div class="col-md-10" style="cursor:default;">
                     <div class="username">${user.name}</div>
-                    <div class="usermsg">${user.email}</div>
+                    
                     <div class="usermsg"></div>
                 </div>
                 </div>
@@ -384,7 +384,9 @@ function ShowRequests(){
                         <div class="username">${note.UserName}</div>
                         <div class="usermsg">${note.UserEmail}</div>
                         <button onclick="RejectRequest('${data.key}')" class="btn btn-sm btn-danger" style="float:right;margin-left:3%;"> Reject Request</button>
-                      
+                        <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
+                        <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
+                
                     </div>
                     </div>
                     </li>`;
@@ -485,7 +487,7 @@ function showRegisteredUsers() {
                         </div>
                         <div class="col-md-10 d-none d-md-block" style="cursor:default;">
                             <div class="username">${user.name}</div>
-                            <div class="usermsg">${user.email}</div>
+                           
                             <button  class="btn btn-sm btn-defualt" style="float:right;"> Request Pending </button>
                             
                         </div>
@@ -503,7 +505,7 @@ function showRegisteredUsers() {
                         </div>
                         <div class="col-md-10 d-none d-md-block" style="cursor:default;">
                             <div class="username">${user.name}</div>
-                            <div class="usermsg">${user.email}</div>
+                      
                             <button onclick="RequestToChat('${data.key}')" class="btn btn-sm requestbtn" style="float:right;"> Request Chat + </button>
                             
                         </div>
