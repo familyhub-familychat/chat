@@ -507,7 +507,7 @@ function showRegisteredUsers() {
                             <div class="username">${user.name}</div>
                       
                             <button onclick="RequestToChat('${data.key}')" class="btn btn-sm requestbtn" style="float:right;"> Request Chat + </button>
-                            <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
+                            <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept & Chat </button>
                    
                         </div>
                         </div>
