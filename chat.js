@@ -382,7 +382,7 @@ function ShowRequests(){
                     </div>
                     <div class="col-md-10 d-none d-md-block" style="cursor:default;">
                         <div class="username">${note.UserName}</div>
-                        <div class="usermsg">${note.UserEmail}</div>
+                      
                         <button onclick="RejectRequest('${data.key}')" class="btn btn-sm btn-danger" style="float:right;margin-left:3%;"> Reject Request</button>
                         <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
                         <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
@@ -507,7 +507,8 @@ function showRegisteredUsers() {
                             <div class="username">${user.name}</div>
                       
                             <button onclick="RequestToChat('${data.key}')" class="btn btn-sm requestbtn" style="float:right;"> Request Chat + </button>
-                            
+                            <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
+                   
                         </div>
                         </div>
                         </li>`;
