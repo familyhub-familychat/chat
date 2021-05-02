@@ -385,8 +385,7 @@ function ShowRequests(){
                       
                         <button onclick="RejectRequest('${data.key}')" class="btn btn-sm btn-danger" style="float:right;margin-left:3%;"> Reject Request</button>
                         <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
-                        <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept </button>
-                
+                       
                     </div>
                     </div>
                     </li>`;
@@ -409,7 +408,7 @@ function Accept(key) {
             if (error) alert(error);
             else {
                 // do something
-                PopulateNotifications();
+                ShowRequests();
                 var famList = { familyMId: obj.From, currentUserId: obj.To };
                 firebase.database().ref('ListOfFam').push(famList, function (error) {
                     if (error) alert(error);
@@ -507,8 +506,7 @@ function showRegisteredUsers() {
                             <div class="username">${user.name}</div>
                       
                             <button onclick="RequestToChat('${data.key}')" class="btn btn-sm requestbtn" style="float:right;"> Request Chat + </button>
-                            <button onclick="Accept('${data.key}')" class="btn btn-sm btn-success" style="float:right;"><i class="fas fa-check"></i> Accept & Chat </button>
-                   
+                          
                         </div>
                         </div>
                         </li>`;
