@@ -171,6 +171,7 @@ background-color:#d7e7f1;
     background-color: #70b0d3;
     border-radius: 0.3rem;
     padding: 8px 10px;
+    position: absolute ;
     display: inline-block;
   
 }

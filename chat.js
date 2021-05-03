@@ -399,7 +399,27 @@ function ShowRequests(){
              
 }
 
+let database  = firebase.database().ref('Requests').child(key).once('value', function (noti) {
+    var requestResult = noti.val();
+    requestResult.status = 'Accept';
+    firebase.database().ref('Requests').child(key).update(requestResult, function (error) {
+        if (error) alert(error);
+        else {
+            // do something
+            ShowRequests();
+            var famList = { familyMId: requestResult.From, currentUserId: requestResult.To };
+            firebase.database().ref('ListOfFam').push(famList, function (error) {
+                if (error) alert(error);
+                else {
+                    //do Something
+                }
+            });
+        }
+    });
+});
 
+
+/*
 function Accept(key) {
     let db = firebase.database().ref('Requests').child(key).once('value', function (noti) {
         var obj = noti.val();
@@ -420,6 +440,7 @@ function Accept(key) {
         });
     });
 }
+*/
 /*
 function AcceptRequest(key) {
     let database = firebase.database().ref('Requests').child(key).once('value', function (notified) {
@@ -512,16 +533,10 @@ function showRegisteredUsers() {
                         </li>`;
                         document.getElementById('RegisteredUsers').innerHTML += userlist;
                     }
-                     
-                    
-                
                   });
-                
-         } 
+                } 
+             });
         });
-
-       
-    });
     
     
 }
@@ -564,9 +579,9 @@ function NumberOfRequests(){
 
 
 function NotificationCount() {
-    let db = firebase.database().ref('Requests');
+    let database  = firebase.database().ref('Requests');
 
-    db.orderByChild('To').equalTo(currentUserKey).on('value', function (notified) {
+    database.orderByChild('To').equalTo(currentUserKey).on('value', function (notified) {
         let notficationCount = Object.values(notified.val()).filter(n => n.status === 'Pending');
         document.getElementById('RequestCount').innerHTML = notficationCount.length;
     });
