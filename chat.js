@@ -399,6 +399,7 @@ function ShowRequests(){
              
 }
 
+/*
 let database  = firebase.database().ref('Requests').child(key).once('value', function (noti) {
     var requestResult = noti.val();
     requestResult.status = 'Accept';
@@ -417,9 +418,9 @@ let database  = firebase.database().ref('Requests').child(key).once('value', fun
         }
     });
 });
+*/
 
 
-/*
 function Accept(key) {
     let db = firebase.database().ref('Requests').child(key).once('value', function (noti) {
         var obj = noti.val();
@@ -440,7 +441,7 @@ function Accept(key) {
         });
     });
 }
-*/
+
 /*
 function AcceptRequest(key) {
     let database = firebase.database().ref('Requests').child(key).once('value', function (notified) {
